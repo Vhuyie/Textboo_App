@@ -1,0 +1,45 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="12dp"
+    android:background="#FFFFFF"
+    android:layout_marginBottom="10dp">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="189dp"
+        android:layout_height="57dp"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvDetails"
+        android:layout_width="185dp"
+        android:layout_height="49dp" />
+
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="188dp"
+        android:layout_height="55dp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnAccept"
+            android:text="Accept"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/btnReject"
+            android:text="Reject"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+</LinearLayout>
