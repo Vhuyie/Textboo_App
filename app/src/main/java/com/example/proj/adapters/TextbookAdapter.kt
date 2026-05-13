@@ -22,13 +22,13 @@ class TextbookAdapter(
             view.findViewById<TextView>(R.id.tv_name)
 
         val module =
-            view.findViewById<TextView>(R.id.tv_module)
+            view.findViewById<TextView>(R.id.txt_module)
 
         val code =
-            view.findViewById<TextView>(R.id.tv_code)
+            view.findViewById<TextView>(R.id.txt_code)
 
         val status =
-            view.findViewById<TextView>(R.id.tv_status)
+            view.findViewById<TextView>(R.id.txt_status)
 
         val btnView =
             view.findViewById<Button>(R.id.btn_view)

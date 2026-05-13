@@ -35,7 +35,7 @@ class SellerDetailsActivity : AppCompatActivity() {
         }
 
         val tvSellerName =
-            findViewById<TextView>(R.id.tv_seller_name)
+            findViewById<TextView>(R.id.stu_seller_name)
 
         val sellerName =
             intent.getStringExtra("sellerName")

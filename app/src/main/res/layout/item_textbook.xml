@@ -15,26 +15,26 @@
 
 
         <TextView
-            android:id="@+id/tv_name"
+            android:id="@+id/txt_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Textbook name: "
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/tv_module"
+            android:id="@+id/txt_module"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Module name: " />
 
         <TextView
-            android:id="@+id/tv_code"
+            android:id="@+id/txt_code"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Code: " />
 
         <TextView
-            android:id="@+id/tv_status"
+            android:id="@+id/txt_status"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 

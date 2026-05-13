@@ -24,12 +24,12 @@ class DetailedTextbookAdapter(
 
 
         val name = view.findViewById<TextView>(R.id.tv_name)
-        val module = view.findViewById<TextView>(R.id.tv_module)
-        val code = view.findViewById<TextView>(R.id.tv_code)
-        val isbn = view.findViewById<TextView>(R.id.tv_isbn)
-        val author = view.findViewById<TextView>(R.id.tv_author)
-        val price = view.findViewById<TextView>(R.id.tv_price)
-        val status = view.findViewById<TextView>(R.id.tv_status)
+        val module = view.findViewById<TextView>(R.id.txt_module)
+        val code = view.findViewById<TextView>(R.id.txt_code)
+        val isbn = view.findViewById<TextView>(R.id.txt_isbn)
+        val author = view.findViewById<TextView>(R.id.txt_author)
+        val price = view.findViewById<TextView>(R.id.txt_price)
+        val status = view.findViewById<TextView>(R.id.txt_status)
         val btnSeller = view.findViewById<Button>(R.id.btn_seller)
         val btnSold = view.findViewById<Button>(R.id.btn_sold)
     }

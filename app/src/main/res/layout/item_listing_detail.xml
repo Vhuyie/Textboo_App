@@ -10,44 +10,44 @@
 
 
     <TextView
-        android:id="@+id/tv_name"
+        android:id="@+id/txt_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Name"
         android:textStyle="bold"/>
 
     <TextView
-        android:id="@+id/tv_module"
+        android:id="@+id/txt_module"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Module"/>
 
     <TextView
-        android:id="@+id/tv_code"
+        android:id="@+id/txt_code"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Code"/>
 
     <TextView
-        android:id="@+id/tv_isbn"
+        android:id="@+id/txt_isbn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ISBN"/>
 
     <TextView
-        android:id="@+id/tv_author"
+        android:id="@+id/txt_author"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Author"/>
 
     <TextView
-        android:id="@+id/tv_price"
+        android:id="@+id/txt_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Price"/>
 
     <TextView
-        android:id="@+id/tv_status"
+        android:id="@+id/txt_status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Status"/>
