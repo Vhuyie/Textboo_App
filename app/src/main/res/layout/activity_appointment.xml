@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:background="#D9B38C"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.AppointmentActivity">
+
+
+    <LinearLayout
+        android:id="@+id/top_bar"
+        android:layout_width="411dp"
+        android:layout_height="59dp"
+        android:background="#8B4513"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="145dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:text="Textbook-Hub"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+        <SearchView
+            android:layout_width="172dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="50dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/profile"
+            android:contentDescription="Profile button"/>
+
+
+    </LinearLayout>
+
+    <!-- NAV BAR -->
+    <LinearLayout
+        android:id="@+id/nav_bar"
+        android:layout_width="0dp"
+        android:layout_height="66dp"
+        android:background="#DFC1A1"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/top_bar">
+
+        <Button
+            android:id="@+id/nav_home"
+            style="@style/CustomButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Home"
+            android:textSize="10sp" />
+
+        <Button
+            android:id="@+id/nav_listing"
+            style="@style/CustomButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Listing Details"
+            android:textSize="10sp" />
+
+        <Button
+            android:id="@+id/nav_add"
+            style="@style/CustomButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Add Textbook"
+            android:textSize="10sp" />
+
+        <Button
+            android:id="@+id/nav_appointment"
+            style="@style/CustomButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Appointment"
+            android:textSize="10sp" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/img_logo"
+        android:layout_width="417dp"
+        android:layout_height="23dp"
+        android:layout_marginTop="66dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/screenshot_2026_05_06_181122"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/nav_bar" />
+
+    <LinearLayout
+        android:layout_width="413dp"
+        android:layout_height="476dp"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_logo"
+        app:layout_constraintVertical_bias="0.034">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Book Appoinment"
+            android:textSize="20sp"
+            android:layout_marginTop="24dp"
+            android:textStyle="bold" />
+
+        <AutoCompleteTextView
+            android:id="@+id/auto_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Search user by name or student number"
+            android:padding="12dp" />
+
+        <!-- DATE PICKER -->
+        <EditText
+            android:id="@+id/et_date"
+            style="@style/CustomEditText"
+            android:layout_width="334dp"
+            android:layout_height="62dp"
+            android:clickable="true"
+            android:focusable="false"
+            android:hint="Select Date"
+            android:textColor="@color/black" />
+
+        <!-- TIME PICKER -->
+        <EditText
+            android:id="@+id/et_time"
+            style="@style/CustomEditText"
+            android:layout_width="334dp"
+            android:layout_height="62dp"
+            android:clickable="true"
+            android:focusable="false"
+            android:hint="Select Time"
+            android:textColor="@color/black" />
+
+        <!-- NOTES -->
+        <EditText
+            android:id="@+id/et_notes"
+            style="@style/CustomEditText"
+            android:layout_width="334dp"
+            android:layout_height="100dp"
+            android:gravity="top"
+            android:hint="Additional Notes"
+            android:inputType="textMultiLine"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/btn_submit"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="20dp"
+            android:text="Book Appointment" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

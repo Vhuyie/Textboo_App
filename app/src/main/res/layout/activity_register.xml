@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D9B38C"
+    tools:context=".activities.RegisterActivity">
+
+    <!-- CIRCULAR IMAGE -->
+    <ImageView
+        android:id="@+id/img_top"
+        android:layout_width="460dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="40dp"
+        android:padding="10dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/screenshot_2026_05_06_181122"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- LOGO -->
+    <ImageView
+        android:id="@+id/img_logo"
+        android:layout_width="111dp"
+        android:layout_height="86dp"
+        android:layout_marginTop="12dp"
+        android:src="@drawable/screenshot_2026_05_06_194238"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/img_top" />
+
+    <!-- REGISTER TEXT -->
+    <TextView
+        android:id="@+id/tv_register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/img_logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"/>
+
+    <!-- SUBTEXT -->
+    <TextView
+        android:id="@+id/tv_sub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create an account to get started"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/tv_register"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
+
+    <!-- FORM -->
+    <LinearLayout
+        android:id="@+id/form"
+        android:layout_width="455dp"
+        android:layout_height="408dp"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:padding="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_sub">
+
+        <EditText
+            android:id="@+id/et_student_no"
+            style="@style/CustomEditText"
+            android:layout_width="409dp"
+            android:layout_height="62dp"
+            android:hint="Student Number" />
+
+        <EditText
+            android:id="@+id/et_name"
+            style="@style/CustomEditText"
+            android:layout_width="409dp"
+            android:layout_height="62dp"
+            android:hint="Student Name" />
+
+        <EditText
+            android:id="@+id/et_password"
+            style="@style/CustomEditText"
+            android:layout_width="409dp"
+            android:layout_height="62dp"
+            android:hint="Password"
+            android:inputType="textPassword" />
+
+        <EditText
+            android:id="@+id/et_confirm"
+            style="@style/CustomEditText"
+            android:layout_width="409dp"
+            android:layout_height="62dp"
+            android:hint="Confirm Password"
+            android:inputType="textPassword" />
+
+        <Button
+            android:id="@+id/btn_register"
+            style="@style/CustomButton"
+            android:layout_width="395dp"
+            android:layout_height="55dp"
+            android:text="Sign Up" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_already"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="448dp"
+        android:text="Already have an account?"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toStartOf="@+id/btn_login"
+        app:layout_constraintHorizontal_bias="0.681"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/form" />
+
+    <Button
+
+        android:id="@+id/btn_login"
+        android:layout_width="153dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="432dp"
+        android:layout_marginEnd="16dp"
+        android:text="Login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/form" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
