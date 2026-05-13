@@ -33,8 +33,7 @@ class TextbookAdapter(
         val btnView =
             view.findViewById<Button>(R.id.btn_view)
 
-        val image =
-            view.findViewById<ImageView>(R.id.img_book)
+
     }
 
     override fun onCreateViewHolder(
@@ -77,10 +76,6 @@ class TextbookAdapter(
             else
                 "Available"
 
-        // BOOK IMAGE
-        if (book.imageUri.isNotEmpty()) {
-            holder.image.setImageURI(Uri.parse(book.imageUri))
-        }
 
         // BUTTON TEXT
         holder.btnView.text =

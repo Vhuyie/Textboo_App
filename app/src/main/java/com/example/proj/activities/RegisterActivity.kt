@@ -15,10 +15,10 @@ import com.example.proj.data.SessionManager
 import com.example.proj.models.User
 
 class RegisterActivity : AppCompatActivity() {
-    private lateinit var etStudentNo: EditText
-    private lateinit var etName: EditText
-    private lateinit var etPassword: EditText
-    private lateinit var etConfirm: EditText
+    private lateinit var stStudentNo: EditText
+    private lateinit var stName: EditText
+    private lateinit var stPassword: EditText
+    private lateinit var stConfirm: EditText
     private lateinit var btnRegister: Button
     private lateinit var btnLogin: Button
 
@@ -31,10 +31,10 @@ class RegisterActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        etStudentNo = findViewById(R.id.et_student_no)
-        etName = findViewById(R.id.et_name)
-        etPassword = findViewById(R.id.et_password)
-        etConfirm = findViewById(R.id.et_confirm)
+        stStudentNo = findViewById(R.id.st_student_no)
+        stName = findViewById(R.id.st_name)
+        stPassword = findViewById(R.id.st_password)
+        stConfirm = findViewById(R.id.st_confirm)
         btnRegister = findViewById(R.id.btn_register)
         btnLogin = findViewById(R.id.btn_login)
 
@@ -46,8 +46,8 @@ class RegisterActivity : AppCompatActivity() {
 
                 // validate and checks if the user exists
                 val existingUser = users.find {
-                    it.studentNo == etStudentNo.text.toString()
-                            || it.name.equals(etName.text.toString(), ignoreCase = true)
+                    it.studentNo == stStudentNo.text.toString()
+                            || it.name.equals(stName.text.toString(), ignoreCase = true)
                 }
 
                 // if the user exists then the registration won't go through
@@ -64,9 +64,9 @@ class RegisterActivity : AppCompatActivity() {
 
                 // if user does not exist then it creates a new user
                 val user = User(
-                    etStudentNo.text.toString(),
-                    etName.text.toString(),
-                    etPassword.text.toString()
+                    stStudentNo.text.toString(),
+                    stName.text.toString(),
+                    stPassword.text.toString()
                 )
 
                 // saves the user to details in the storage
@@ -94,21 +94,21 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun validate(): Boolean {
-        if (etStudentNo.text.isEmpty()) {
-            etStudentNo.error = "Required"
+        if (stStudentNo.text.isEmpty()) {
+            stStudentNo.error = "Required"
             return false
         }
-        if (etName.text.isEmpty()) {
-            etName.error = "Required"
+        if (stName.text.isEmpty()) {
+            stName.error = "Required"
             return false
         }
-        if (etPassword.text.isEmpty()) {
-            etPassword.error = "Required"
+        if (stPassword.text.isEmpty()) {
+            stPassword.error = "Required"
             return false
         }
 
-        if (etPassword.text.toString() != etConfirm.text.toString()) {
-            etConfirm.error = "Passwords do not match"
+        if (stPassword.text.toString() != stConfirm.text.toString()) {
+            stConfirm.error = "Passwords do not match"
             return false
         }
         return true

@@ -126,13 +126,13 @@
                 android:text="Student Number:" />
 
             <EditText
-                android:id="@+id/et_name"
+                android:id="@+id/stu_name"
                 android:layout_width="383dp"
                 android:layout_height="66dp"
                 android:hint="Name" />
 
             <EditText
-                android:id="@+id/et_password"
+                android:id="@+id/stu_password"
                 android:layout_width="382dp"
                 android:layout_height="66dp"
                 android:hint="Password"
@@ -173,7 +173,7 @@
                 android:padding="8dp"/>
 
             <TextView
-                android:id="@+id/tv_profile_name"
+                android:id="@+id/profile_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Name"

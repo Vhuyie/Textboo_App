@@ -80,26 +80,15 @@ class MainActivity : AppCompatActivity() {
 
                     val filteredList = textbookList.filter {
 
-                        it.name.contains(
-                            newText ?: "",
-                            ignoreCase = true
-                        )
-
+                        it.name.contains(newText ?: "",
+                            ignoreCase = true)
                                 ||
-
-                                it.module.contains(
-                                    newText ?: "",
-                                    ignoreCase = true
-                                )
-
+                                it.module.contains(newText ?: "",
+                                    ignoreCase = true)
                                 ||
-
-                                it.code.contains(
-                                    newText ?: "",
-                                    ignoreCase = true
-                                )
+                                it.code.contains(newText ?: "",
+                                    ignoreCase = true)
                     }
-
                     adapter = TextbookAdapter(filteredList) { book ->
 
                         val intent =
@@ -145,11 +134,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         profileBtn.setOnClickListener {
-
             DataStore.hasNotification = false
-
             profileBtn.clearColorFilter()
-
             startActivity(
                 Intent(this, ProfileActivity::class.java)
             )

@@ -63,10 +63,6 @@
         android:layout_height="wrap_content"
         android:text="View Seller Details"/>
 
-    <ImageView
-        android:id="@+id/img_book"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:scaleType="centerCrop"/>
+
 
 </LinearLayout>

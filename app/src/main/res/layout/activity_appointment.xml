@@ -134,7 +134,7 @@
 
         <!-- DATE PICKER -->
         <EditText
-            android:id="@+id/et_date"
+            android:id="@+id/date"
             style="@style/CustomEditText"
             android:layout_width="334dp"
             android:layout_height="62dp"
@@ -145,7 +145,7 @@
 
         <!-- TIME PICKER -->
         <EditText
-            android:id="@+id/et_time"
+            android:id="@+id/time"
             style="@style/CustomEditText"
             android:layout_width="334dp"
             android:layout_height="62dp"
@@ -156,7 +156,7 @@
 
         <!-- NOTES -->
         <EditText
-            android:id="@+id/et_notes"
+            android:id="@+id/notes"
             style="@style/CustomEditText"
             android:layout_width="334dp"
             android:layout_height="100dp"

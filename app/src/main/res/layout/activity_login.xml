@@ -69,14 +69,14 @@
         android:layout_marginTop="16dp">
 
         <EditText
-            android:id="@+id/et_username"
+            android:id="@+id/St_username"
             style="@style/CustomEditText"
             android:layout_width="357dp"
             android:layout_height="66dp"
             android:hint="Username" />
 
         <EditText
-            android:id="@+id/et_password"
+            android:id="@+id/St_password"
             style="@style/CustomEditText"
             android:layout_width="348dp"
             android:layout_height="56dp"

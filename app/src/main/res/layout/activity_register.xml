@@ -70,21 +70,21 @@
         app:layout_constraintTop_toBottomOf="@id/tv_sub">
 
         <EditText
-            android:id="@+id/et_student_no"
+            android:id="@+id/st_student_no"
             style="@style/CustomEditText"
             android:layout_width="409dp"
             android:layout_height="62dp"
             android:hint="Student Number" />
 
         <EditText
-            android:id="@+id/et_name"
+            android:id="@+id/st_name"
             style="@style/CustomEditText"
             android:layout_width="409dp"
             android:layout_height="62dp"
             android:hint="Student Name" />
 
         <EditText
-            android:id="@+id/et_password"
+            android:id="@+id/st_password"
             style="@style/CustomEditText"
             android:layout_width="409dp"
             android:layout_height="62dp"
@@ -92,7 +92,7 @@
             android:inputType="textPassword" />
 
         <EditText
-            android:id="@+id/et_confirm"
+            android:id="@+id/st_confirm"
             style="@style/CustomEditText"
             android:layout_width="409dp"
             android:layout_height="62dp"

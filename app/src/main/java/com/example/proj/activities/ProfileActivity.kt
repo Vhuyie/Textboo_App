@@ -24,12 +24,12 @@ class ProfileActivity : AppCompatActivity() {
 
         val user = SessionManager.getCurrentUser(this)
 
-        val etName = findViewById<EditText>(R.id.et_name)
-        val etPassword = findViewById<EditText>(R.id.et_password)
+        val stuName = findViewById<EditText>(R.id.stu_name)
+        val stuPassword = findViewById<EditText>(R.id.stu_password)
         val tvStudentNo = findViewById<TextView>(R.id.student_no)
 
-        val profileName = findViewById<TextView>(R.id.tv_profile_name)
-        val profileEmail = findViewById<TextView>(R.id.tv_profile_email)
+        val profileName = findViewById<TextView>(R.id.profile_name)
+
 
         recycler = findViewById(R.id.recycler_appointments)
         recycler.layoutManager = LinearLayoutManager(this)
@@ -48,18 +48,16 @@ class ProfileActivity : AppCompatActivity() {
 
 
         val sellerName = intent.getStringExtra("sellerName")
-        val sellerEmail = intent.getStringExtra("sellerEmail")
         val isSellerView = sellerName != null
 
         if (isSellerView) {
 
             // SELLER PROFILE VIEW
-
             profileName.text = sellerName
-            profileEmail.text = sellerEmail
 
-            etName.visibility = View.GONE
-            etPassword.visibility = View.GONE
+
+            stuName.visibility = View.GONE
+            stuPassword.visibility = View.GONE
             tvStudentNo.visibility = View.GONE
 
         } else {
@@ -69,8 +67,8 @@ class ProfileActivity : AppCompatActivity() {
 
             if (user != null) {
                 tvStudentNo.text = user.studentNo
-                etName.setText(user.name)
-                etPassword.setText(user.password)
+                stuName.setText(user.name)
+                stuPassword.setText(user.password)
             }
 
             loadAppointments()

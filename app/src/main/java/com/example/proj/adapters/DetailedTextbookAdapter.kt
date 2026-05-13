@@ -21,7 +21,7 @@ class DetailedTextbookAdapter(
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
-        val image = view.findViewById<ImageView>(R.id.img_book)
+
 
         val name = view.findViewById<TextView>(R.id.tv_name)
         val module = view.findViewById<TextView>(R.id.tv_module)
@@ -65,12 +65,6 @@ class DetailedTextbookAdapter(
         holder.status.text =
             if (book.isSold) "Sold" else "Available"
 
-
-        if (book.imageUri.isNotEmpty()) {
-            holder.image.setImageURI(Uri.parse(book.imageUri))
-        }else {
-            holder.image.setImageResource(R.drawable.profile)
-        }
 
         holder.btnSeller.setOnClickListener {
 

@@ -34,27 +34,14 @@ class SellerDetailsActivity : AppCompatActivity() {
             insets
         }
 
-        // ----------------------------
-        // TEXTVIEW
-        // ----------------------------
         val tvSellerName =
             findViewById<TextView>(R.id.tv_seller_name)
 
-        // ----------------------------
-        // GET SELLER NAME
-        // ----------------------------
         val sellerName =
             intent.getStringExtra("sellerName")
                 ?: "Unknown Seller"
 
-        // ----------------------------
-        // DISPLAY SELLER NAME
-        // ----------------------------
         tvSellerName.text = sellerName
-
-        // ----------------------------
-        // NAVIGATION
-        // ----------------------------
 
         findViewById<Button>(R.id.nav_home)
             .setOnClickListener {
