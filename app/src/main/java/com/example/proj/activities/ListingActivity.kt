@@ -34,7 +34,6 @@ class ListingActivity : AppCompatActivity() {
             insets
         }
 
-
         recyclerView = findViewById(R.id.recycler_listing)
 
         recyclerView.layoutManager = LinearLayoutManager(this)
@@ -55,7 +54,7 @@ class ListingActivity : AppCompatActivity() {
 
                 val query = newText ?: ""
 
-                // ADD THIS HERE (FIRST)
+
                 if (query.isEmpty()) {
                     adapter.updateList(textbookList)
                     return true
@@ -75,7 +74,7 @@ class ListingActivity : AppCompatActivity() {
             }
         })
 
-        // Navigation
+
         findViewById<Button>(R.id.nav_home).setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
         }

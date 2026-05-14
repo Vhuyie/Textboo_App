@@ -79,10 +79,7 @@ class RegisterActivity : AppCompatActivity() {
                     Toast.LENGTH_SHORT
                 ).show()
 
-                startActivity(
-                    Intent(this, LoginActivity::class.java)
-                )
-
+                startActivity(Intent(this, LoginActivity::class.java))
                 finish()
             }
         }
@@ -92,7 +89,7 @@ class RegisterActivity : AppCompatActivity() {
         }
     }
 
-    //validation
+    //validation fields
     private fun validate(): Boolean {
         if (stStudentNo.text.isEmpty()) {
             stStudentNo.error = "Required"

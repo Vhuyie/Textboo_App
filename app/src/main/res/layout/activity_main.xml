@@ -8,7 +8,6 @@
     android:background="#D9B38C"
     tools:context=".activities.MainActivity">
 
-    <!-- TOP BAR -->
     <LinearLayout
         android:id="@+id/top_bar"
         android:layout_width="411dp"
@@ -95,7 +94,7 @@
 
     </LinearLayout>
 
-    <!-- CONTENT AREA -->
+
 
     <ImageView
         android:id="@+id/img_logo"
@@ -107,9 +106,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/nav_bar" />
 
-        <!-- BUTTON -->
-
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_books"
         android:layout_width="0dp"
@@ -119,9 +115,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
-
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

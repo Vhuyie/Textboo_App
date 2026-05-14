@@ -47,17 +47,13 @@ class MainActivity : AppCompatActivity() {
         textbookList = PrefsManager.getBooks(this)
 
         adapter = TextbookAdapter(textbookList) { book ->
-
-            val intent =
-                Intent(this, ListingActivity::class.java)
-
+            val intent = Intent(this, ListingActivity::class.java)
             startActivity(intent)
         }
 
         recyclerView.adapter = adapter
 
-        val searchView =
-            findViewById<SearchView>(R.id.searchView)
+        val searchView = findViewById<SearchView>(R.id.searchView)
 
         searchView.setOnQueryTextListener(
             object : SearchView.OnQueryTextListener {
@@ -67,7 +63,6 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 override fun onQueryTextChange(newText: String?): Boolean {
-
                     val filteredList = textbookList.filter {
 
                         it.name.contains(newText ?: "",
@@ -80,10 +75,7 @@ class MainActivity : AppCompatActivity() {
                                     ignoreCase = true)
                     }
                     adapter = TextbookAdapter(filteredList) { book ->
-
-                        val intent =
-                            Intent(this@MainActivity, ListingActivity::class.java)
-
+                        val intent = Intent(this@MainActivity, ListingActivity::class.java)
                         startActivity(intent)
                     }
 
@@ -113,7 +105,6 @@ class MainActivity : AppCompatActivity() {
         val profileBtn = findViewById<ImageButton>(R.id.imageButton)
 
         if (DataStore.hasNotification) {
-
             profileBtn.setColorFilter(android.graphics.Color.RED)
         }
 

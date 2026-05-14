@@ -115,7 +115,7 @@ class ProfileActivity : AppCompatActivity() {
             }
 
             DataStore.hasNotification = true
-            loadAppointments() // refresh
+            loadAppointments() // refresh the screen
         }
 
         recycler.adapter = adapter

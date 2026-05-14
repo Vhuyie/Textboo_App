@@ -44,7 +44,6 @@
 
     </LinearLayout>
 
-    <!-- NAV BAR -->
     <LinearLayout
         android:id="@+id/nav_bar"
         android:layout_width="0dp"

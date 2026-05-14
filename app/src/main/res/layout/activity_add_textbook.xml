@@ -8,7 +8,6 @@
     android:layout_height="match_parent"
     tools:context=".activities.AddTextbookActivity">
 
-    <!-- TOP BAR -->
 
     <LinearLayout
         android:id="@+id/top_bar"
@@ -45,10 +44,9 @@
             android:contentDescription="Profile button"
             app:srcCompat="@drawable/profile" />
 
-
     </LinearLayout>
 
-    <!-- NAV BAR -->
+
     <LinearLayout
         android:id="@+id/nav_bar"
         android:layout_width="0dp"
@@ -97,7 +95,6 @@
             android:textSize="10sp" />
 
     </LinearLayout>
-
 
     <LinearLayout
         android:layout_width="match_parent"

@@ -8,7 +8,6 @@
     android:background="#D9B38C"
     tools:context=".activities.LoginActivity">
 
-
     <ImageView
         android:id="@+id/img_top"
         android:layout_width="460dp"
@@ -31,7 +30,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="12dp" />
 
-    <!-- REGISTER TEXT -->
+
     <TextView
         android:id="@+id/stu_register"
         android:layout_width="wrap_content"
@@ -44,7 +43,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp" />
 
-    <!-- SUBTEXT -->
+
     <TextView
         android:id="@+id/tv_sub"
         android:layout_width="wrap_content"
@@ -56,7 +55,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="8dp" />
 
-    <!-- FORM -->
+
     <LinearLayout
         android:id="@+id/form"
         android:layout_width="0dp"
@@ -92,7 +91,7 @@
             android:layout_marginTop="12dp" />
     </LinearLayout>
 
-    <!-- ALREADY HAVE ACCOUNT -->
+
     <LinearLayout
         android:id="@+id/login_row"
         android:layout_width="0dp"

@@ -74,5 +74,17 @@ class AddTextbookActivity : AppCompatActivity() {
         findViewById<Button>(R.id.nav_appointment).setOnClickListener {
             startActivity(Intent(this, AppointmentActivity::class.java))
         }
+
+        val profileBtn = findViewById<ImageButton>(R.id.imageButton)
+        if (DataStore.hasNotification) {
+            profileBtn.setColorFilter(android.graphics.Color.RED)
+        }
+
+
+        profileBtn.setOnClickListener {
+            DataStore.hasNotification = false
+            profileBtn.clearColorFilter() // remove red dot effect after being clicked
+            startActivity(Intent(this, ProfileActivity::class.java))
+        }
     }
 }

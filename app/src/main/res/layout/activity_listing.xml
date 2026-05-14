@@ -94,7 +94,6 @@
             android:textSize="10sp" />
 
     </LinearLayout>
-    <!-- CONTENT -->
 
     <ImageView
         android:id="@+id/img_logo"

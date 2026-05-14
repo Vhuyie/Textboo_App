@@ -44,7 +44,6 @@
             android:layout_height="wrap_content"
             android:backgroundTint="#4B5232"
             android:textColor="@android:color/white"/>
-
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>
