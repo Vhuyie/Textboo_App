@@ -64,11 +64,11 @@ class TextbookAdapter(
         val book = list[position]
 
         // BOOK DETAILS
-        holder.name.text = book.name
+        holder.name.text = "Textbook name: ${book.name}"
 
-        holder.module.text = book.module
+        holder.module.text = "Module name: ${book.module}"
 
-        holder.code.text = book.code
+        holder.code.text = "Code: ${book.code}"
 
         holder.status.text =
             if (book.isSold)
