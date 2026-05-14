@@ -8,92 +8,91 @@
     android:layout_height="match_parent"
     tools:context=".activities.AppointmentActivity">
 
+        <LinearLayout
+            android:id="@+id/top_bar"
+            android:layout_width="411dp"
+            android:layout_height="59dp"
+            android:background="#8B4513"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-    <LinearLayout
-        android:id="@+id/top_bar"
-        android:layout_width="411dp"
-        android:layout_height="59dp"
-        android:background="#8B4513"
-        android:orientation="horizontal"
-        android:padding="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="145dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:text="Textbook-Hub"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+            <SearchView
+                android:id="@+id/searchView"
+                android:layout_width="172dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="145dp"
-            android:layout_height="30dp"
-            android:layout_weight="1"
-            android:text="Textbook-Hub"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textStyle="bold" />
-        <SearchView
-            android:layout_width="172dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-
-        <ImageButton
-            android:id="@+id/imageButton"
-            android:layout_width="50dp"
-            android:layout_height="48dp"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/profile"
-            android:contentDescription="Profile button"/>
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="50dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/profile"
+                android:contentDescription="Profile button"/>
 
 
-    </LinearLayout>
+        </LinearLayout>
 
-    <!-- NAV BAR -->
-    <LinearLayout
-        android:id="@+id/nav_bar"
-        android:layout_width="0dp"
-        android:layout_height="66dp"
-        android:background="#DFC1A1"
-        android:orientation="horizontal"
-        android:padding="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/top_bar">
-
-        <Button
-            android:id="@+id/nav_home"
-            style="@style/CustomButton"
+        <LinearLayout
+            android:id="@+id/nav_bar"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="Home"
-            android:textSize="10sp" />
+            android:layout_height="66dp"
+            android:background="#DFC1A1"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/top_bar">
 
-        <Button
-            android:id="@+id/nav_listing"
-            style="@style/CustomButton"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="Listing Details"
-            android:textSize="10sp" />
+            <Button
+                android:id="@+id/nav_home"
+                style="@style/CustomButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Home"
+                android:textSize="10sp" />
 
-        <Button
-            android:id="@+id/nav_add"
-            style="@style/CustomButton"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="Add Textbook"
-            android:textSize="10sp" />
+            <Button
+                android:id="@+id/nav_listing"
+                style="@style/CustomButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Listing Details"
+                android:textSize="10sp" />
 
-        <Button
-            android:id="@+id/nav_appointment"
-            style="@style/CustomButton"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="Appointment"
-            android:textSize="10sp" />
+            <Button
+                android:id="@+id/nav_add"
+                style="@style/CustomButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Add Textbook"
+                android:textSize="10sp" />
 
-    </LinearLayout>
+            <Button
+                android:id="@+id/nav_appointment"
+                style="@style/CustomButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Appointment"
+                android:textSize="10sp" />
+
+        </LinearLayout>
 
     <ImageView
         android:id="@+id/img_logo"
@@ -103,7 +102,8 @@
         android:scaleType="centerCrop"
         android:src="@drawable/screenshot_2026_05_06_181122"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/nav_bar" />
+        app:layout_constraintTop_toTopOf="@+id/nav_bar"
+         />
 
     <LinearLayout
         android:layout_width="413dp"
@@ -170,7 +170,9 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginTop="20dp"
-            android:text="Book Appointment" />
+            android:text="Book Appointment"
+            android:backgroundTint="#A35D2D"
+            android:textColor="@android:color/white"/>
 
     </LinearLayout>
 

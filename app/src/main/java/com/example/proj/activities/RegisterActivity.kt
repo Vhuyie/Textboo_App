@@ -10,7 +10,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.proj.R
-import com.example.proj.data.DataStore
 import com.example.proj.data.SessionManager
 import com.example.proj.models.User
 
@@ -93,6 +92,7 @@ class RegisterActivity : AppCompatActivity() {
         }
     }
 
+    //validation
     private fun validate(): Boolean {
         if (stStudentNo.text.isEmpty()) {
             stStudentNo.error = "Required"

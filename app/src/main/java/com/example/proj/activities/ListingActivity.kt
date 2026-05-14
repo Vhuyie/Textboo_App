@@ -29,24 +29,15 @@ class ListingActivity : AppCompatActivity() {
         setContentView(R.layout.activity_listing)
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-
-            v.setPadding(
-                systemBars.left,
-                systemBars.top,
-                systemBars.right,
-                systemBars.bottom
-            )
-
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
 
         recyclerView = findViewById(R.id.recycler_listing)
 
-        recyclerView.layoutManager =
-            LinearLayoutManager(this)
+        recyclerView.layoutManager = LinearLayoutManager(this)
 
         textbookList = PrefsManager.getBooks(this)
 
@@ -64,14 +55,13 @@ class ListingActivity : AppCompatActivity() {
 
                 val query = newText ?: ""
 
-                // ✅ ADD THIS HERE (FIRST)
+                // ADD THIS HERE (FIRST)
                 if (query.isEmpty()) {
                     adapter.updateList(textbookList)
                     return true
                 }
 
                 val filteredList = textbookList.filter {
-
                     it.name.contains(query, true) ||
                             it.module.contains(query, true) ||
                             it.code.contains(query, true) ||
@@ -98,7 +88,6 @@ class ListingActivity : AppCompatActivity() {
             startActivity(Intent(this, AppointmentActivity::class.java))
         }
 
-
         val profileBtn = findViewById<ImageButton>(R.id.imageButton)
 
         if (DataStore.hasNotification) {
@@ -106,20 +95,15 @@ class ListingActivity : AppCompatActivity() {
         }
 
         profileBtn.setOnClickListener {
-
             DataStore.hasNotification = false
-
             profileBtn.clearColorFilter()
-
             startActivity(Intent(this, ProfileActivity::class.java))
         }
     }
 
     override fun onResume() {
         super.onResume()
-
         val updatedList = PrefsManager.getBooks(this)
-
         adapter.updateList(updatedList)
     }
 }

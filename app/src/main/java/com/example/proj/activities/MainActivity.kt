@@ -31,25 +31,15 @@ class MainActivity : AppCompatActivity() {
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
 
-            val systemBars =
-                insets.getInsets(WindowInsetsCompat.Type.systemBars())
-
-            v.setPadding(
-                systemBars.left,
-                systemBars.top,
-                systemBars.right,
-                systemBars.bottom
-            )
-
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
 
-        recyclerView =
-            findViewById(R.id.recycler_books)
+        recyclerView = findViewById(R.id.recycler_books)
 
-        recyclerView.layoutManager =
-            LinearLayoutManager(this)
+        recyclerView.layoutManager = LinearLayoutManager(this)
 
         // ----------------------------
         // ADAPTER
@@ -92,10 +82,7 @@ class MainActivity : AppCompatActivity() {
                     adapter = TextbookAdapter(filteredList) { book ->
 
                         val intent =
-                            Intent(
-                                this@MainActivity,
-                                ListingActivity::class.java
-                            )
+                            Intent(this@MainActivity, ListingActivity::class.java)
 
                         startActivity(intent)
                     }
@@ -123,14 +110,11 @@ class MainActivity : AppCompatActivity() {
             .setOnClickListener { startActivity(Intent(this, AppointmentActivity::class.java))
             }
 
-        val profileBtn =
-            findViewById<ImageButton>(R.id.imageButton)
+        val profileBtn = findViewById<ImageButton>(R.id.imageButton)
 
         if (DataStore.hasNotification) {
 
-            profileBtn.setColorFilter(
-                android.graphics.Color.RED
-            )
+            profileBtn.setColorFilter(android.graphics.Color.RED)
         }
 
         profileBtn.setOnClickListener {
@@ -144,7 +128,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-
         recyclerView.adapter?.notifyDataSetChanged()
     }
 }

@@ -44,7 +44,7 @@ class AppointmentActivity : AppCompatActivity() {
 
         profileBtn.setOnClickListener {
             DataStore.hasNotification = false
-            profileBtn.clearColorFilter() // remove red dot effect
+            profileBtn.clearColorFilter() // remove red dot effect after being clicked
             startActivity(Intent(this, ProfileActivity::class.java))
         }
 

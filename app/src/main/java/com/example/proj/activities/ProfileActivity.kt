@@ -46,15 +46,13 @@ class ProfileActivity : AppCompatActivity() {
             profileBtn.clearColorFilter()
         }
 
-
         val sellerName = intent.getStringExtra("sellerName")
         val isSellerView = sellerName != null
 
         if (isSellerView) {
 
-            // SELLER PROFILE VIEW
+            // Seller profile details
             profileName.text = sellerName
-
 
             stuName.visibility = View.GONE
             stuPassword.visibility = View.GONE
@@ -62,9 +60,7 @@ class ProfileActivity : AppCompatActivity() {
 
         } else {
 
-
-            //  USER PROFILE
-
+            //user profile
             if (user != null) {
                 tvStudentNo.text = user.studentNo
                 stuName.setText(user.name)

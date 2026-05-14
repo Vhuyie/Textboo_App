@@ -1,11 +1,10 @@
 package com.example.proj.adapters
 
-import android.net.Uri
+
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.proj.R
@@ -18,41 +17,26 @@ class TextbookAdapter(
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
-        val name =
-            view.findViewById<TextView>(R.id.tv_name)
+        val name = view.findViewById<TextView>(R.id.txt_name)
 
-        val module =
-            view.findViewById<TextView>(R.id.txt_module)
+        val module = view.findViewById<TextView>(R.id.txt_module)
 
-        val code =
-            view.findViewById<TextView>(R.id.txt_code)
+        val code = view.findViewById<TextView>(R.id.txt_code)
 
-        val status =
-            view.findViewById<TextView>(R.id.txt_status)
+        val status = view.findViewById<TextView>(R.id.txt_status)
 
-        val btnView =
-            view.findViewById<Button>(R.id.btn_view)
-
-
+        val btnView = view.findViewById<Button>(R.id.btn_view)
     }
 
-    override fun onCreateViewHolder(
-        parent: ViewGroup,
-        viewType: Int
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int
     ): ViewHolder {
-
         val view = LayoutInflater.from(parent.context)
-            .inflate(
-                R.layout.item_textbook,
-                parent,
-                false
-            )
+            .inflate(R.layout.item_textbook, parent, false)
 
         return ViewHolder(view)
     }
 
     override fun getItemCount(): Int {
-
         return list.size
     }
 
@@ -60,15 +44,15 @@ class TextbookAdapter(
         holder: ViewHolder,
         position: Int
     ) {
-
         val book = list[position]
 
-        // BOOK DETAILS
-        holder.name.text = "Textbook name: ${book.name}"
+        // textbook details
+        holder.name.text = "Textbook name: " + book.name
 
-        holder.module.text = "Module name: ${book.module}"
+        holder.module.text = "Module name: " + book.module
 
-        holder.code.text = "Code: ${book.code}"
+        holder.code.text = "Code: " + book.code
+
 
         holder.status.text =
             if (book.isSold)
@@ -76,12 +60,10 @@ class TextbookAdapter(
             else
                 "Available"
 
-
-        // BUTTON TEXT
         holder.btnView.text =
             "View More Details"
 
-        // BUTTON CLICK
+        // Button click listener
         holder.btnView.setOnClickListener {
 
             onClick(book)
