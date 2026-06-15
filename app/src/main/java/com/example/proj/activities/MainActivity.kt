@@ -41,9 +41,9 @@ class MainActivity : AppCompatActivity() {
 
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        // ----------------------------
+
         // ADAPTER
-        // ----------------------------
+
         textbookList = PrefsManager.getBooks(this)
 
         adapter = TextbookAdapter(textbookList) { book ->
@@ -87,19 +87,23 @@ class MainActivity : AppCompatActivity() {
         )
 
         findViewById<Button>(R.id.nav_home)
-            .setOnClickListener { startActivity(Intent(this, MainActivity::class.java))
+            .setOnClickListener {
+                startActivity(Intent(this, MainActivity::class.java))
             }
 
         findViewById<Button>(R.id.nav_listing)
-            .setOnClickListener { startActivity(Intent(this, ListingActivity::class.java))
+            .setOnClickListener {
+                startActivity(Intent(this, ListingActivity::class.java))
             }
 
         findViewById<Button>(R.id.nav_add)
-            .setOnClickListener { startActivity(Intent(this, AddTextbookActivity::class.java))
+            .setOnClickListener {
+                startActivity(Intent(this, AddTextbookActivity::class.java))
             }
 
         findViewById<Button>(R.id.nav_appointment)
-            .setOnClickListener { startActivity(Intent(this, AppointmentActivity::class.java))
+            .setOnClickListener {
+                startActivity(Intent(this, AppointmentActivity::class.java))
             }
 
         val profileBtn = findViewById<ImageButton>(R.id.imageButton)

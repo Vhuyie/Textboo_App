@@ -1,10 +1,12 @@
 package com.example.proj.adapters
 
 
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.proj.R
@@ -16,6 +18,8 @@ class TextbookAdapter(
 ) : RecyclerView.Adapter<TextbookAdapter.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+
+        val bookImage = view.findViewById<ImageView>(R.id.book_image)
 
         val name = view.findViewById<TextView>(R.id.txt_name)
 
@@ -45,6 +49,18 @@ class TextbookAdapter(
         position: Int
     ) {
         val book = list[position]
+
+        val uri = book.imageUri
+
+        if (!uri.isNullOrEmpty()) {
+            try {
+                holder.bookImage.setImageURI(Uri.parse(uri))
+            } catch (e: Exception) {
+                holder.bookImage.setImageResource(R.drawable.placeholder_image)
+            }
+        } else {
+            holder.bookImage.setImageResource(R.drawable.placeholder_image)
+        }
 
         // textbook details
         holder.name.text = "Textbook name: " + book.name

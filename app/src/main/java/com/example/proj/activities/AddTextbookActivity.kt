@@ -11,8 +11,20 @@ import com.example.proj.data.DataStore
 import com.example.proj.data.PrefsManager
 import com.example.proj.models.Textbook
 import com.example.proj.R
+import android.net.Uri
+import androidx.activity.result.contract.ActivityResultContracts
 
 class AddTextbookActivity : AppCompatActivity() {
+
+    private var selectedImageUri: Uri? = null
+
+    private val imagePicker =
+        registerForActivityResult(ActivityResultContracts.GetContent()) { uri ->
+            if (uri != null) {
+                selectedImageUri = uri
+                findViewById<ImageView>(R.id.book_image_preview).setImageURI(uri)
+            }
+        }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,10 +43,23 @@ class AddTextbookActivity : AppCompatActivity() {
         val etIsbn = findViewById<EditText>(R.id.isb_number)
         val etAuthor = findViewById<EditText>(R.id.book_author)
         val etPrice = findViewById<EditText>(R.id.book_price)
-
+        val etDescription = findViewById<EditText>(R.id.book_description)
+        val etEdition = findViewById<EditText>(R.id.book_edition)
+        val btnUpload = findViewById<Button>(R.id.btn_upload_image)
         val btnAdd = findViewById<Button>(R.id.btn_add)
 
+        btnUpload.setOnClickListener {
+            imagePicker.launch("image/*")
+        }
         btnAdd.setOnClickListener {
+
+            if (etName.text.isEmpty() ||
+                etPrice.text.isEmpty() ||
+                selectedImageUri == null
+            ) {
+                Toast.makeText(this, "Fill all required fields", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
 
             val user = DataStore.currentUser
 
@@ -50,8 +75,16 @@ class AddTextbookActivity : AppCompatActivity() {
                 etIsbn.text.toString(),
                 etAuthor.text.toString(),
                 etPrice.text.toString(),
+                etDescription.text.toString(),
+                etEdition.text.toString(),
+                selectedImageUri?.toString() ?: "",
                 user
             )
+
+            if (user == null) {
+                Toast.makeText(this, "Please login again", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
 
             val list = PrefsManager.getBooks(this).toMutableList()
             list.add(book)

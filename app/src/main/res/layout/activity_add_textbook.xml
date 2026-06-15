@@ -96,82 +96,114 @@
 
     </LinearLayout>
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="0dp"
         app:layout_constraintTop_toBottomOf="@+id/img_logo"
-        tools:layout_editor_absoluteX="0dp">
+        app:layout_constraintBottom_toBottomOf="parent">
 
-        <TextView
-            android:id="@+id/textView"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Add Textbook"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:orientation="vertical"
+            android:padding="16dp">
 
-        <EditText
-            android:id="@+id/textbook_name"
-            style="@style/CustomEditText"
-            android:layout_width="334dp"
-            android:layout_height="62dp"
-            android:layout_marginTop="16dp"
-            android:hint="Textbook Name"
-            android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Add Textbook"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-        <EditText
-            android:id="@+id/module"
-            style="@style/CustomEditText"
-            android:layout_width="337dp"
-            android:layout_height="62dp"
-            android:hint="Module Name" />
+            <EditText
+                android:id="@+id/textbook_name"
+                style="@style/CustomEditText"
+                android:layout_width="376dp"
+                android:layout_height="82dp"
+                android:hint="Textbook Name" />
 
-        <EditText
-            android:id="@+id/code_module"
-            style="@style/CustomEditText"
-            android:layout_width="337dp"
-            android:layout_height="62dp"
-            android:hint="Module Code" />
+            <EditText
+                android:id="@+id/module"
+                style="@style/CustomEditText"
+                android:layout_width="378dp"
+                android:layout_height="74dp"
+                android:hint="Module Name" />
 
-        <EditText
-            android:id="@+id/isb_number"
-            style="@style/CustomEditText"
-            android:layout_width="337dp"
-            android:layout_height="62dp"
-            android:hint="ISBN" />
+            <EditText
+                android:id="@+id/code_module"
+                style="@style/CustomEditText"
+                android:layout_width="372dp"
+                android:layout_height="62dp"
+                android:hint="Module Code" />
 
-        <EditText
-            android:id="@+id/book_author"
-            style="@style/CustomEditText"
-            android:layout_width="337dp"
-            android:layout_height="62dp"
-            android:hint="Author" />
+            <EditText
+                android:id="@+id/isb_number"
+                style="@style/CustomEditText"
+                android:layout_width="372dp"
+                android:layout_height="62dp"
+                android:hint="ISBN" />
 
-        <EditText
-            android:id="@+id/book_price"
-            style="@style/CustomEditText"
-            android:layout_width="337dp"
-            android:layout_height="62dp"
-            android:hint="Price" />
+            <EditText
+                android:id="@+id/book_author"
+                style="@style/CustomEditText"
+                android:layout_width="370dp"
+                android:layout_height="62dp"
+                android:hint="Author" />
 
+            <EditText
+                android:id="@+id/book_price"
+                style="@style/CustomEditText"
+                android:layout_width="365dp"
+                android:layout_height="62dp"
+                android:hint="Price" />
 
-        <Button
-            android:id="@+id/btn_add"
-            style="@style/CustomButton"
-            android:layout_width="259dp"
-            android:layout_height="wrap_content"
-            android:text="Add Textbook" />
+            <EditText
+                android:id="@+id/book_description"
+                style="@style/CustomEditText"
+                android:layout_width="370dp"
+                android:layout_height="wrap_content"
+                android:gravity="top"
+                android:hint="Book Description"
+                android:inputType="textMultiLine"
+                android:minLines="3" />
 
-    </LinearLayout>
+            <EditText
+                android:id="@+id/book_edition"
+                style="@style/CustomEditText"
+                android:layout_width="366dp"
+                android:layout_height="63dp"
+                android:hint="Book Edition" />
+
+            <Button
+                android:id="@+id/btn_upload_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Upload Book Image"/>
+
+            <ImageView
+                android:id="@+id/book_image_preview"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/ic_launcher"/>
+
+            <Button
+                android:id="@+id/btn_add"
+                style="@style/CustomButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add Textbook" />
+
+        </LinearLayout>
+    </ScrollView>
 
     <ImageView
         android:id="@+id/img_logo"
-        android:layout_width="417dp"
-        android:layout_height="23dp"
+        android:layout_width="512dp"
+        android:layout_height="0dp"
         android:layout_marginTop="66dp"
         android:scaleType="centerCrop"
         android:src="@drawable/screenshot_2026_05_06_181122"
@@ -179,4 +211,4 @@
         app:layout_constraintTop_toTopOf="@+id/nav_bar" />
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
