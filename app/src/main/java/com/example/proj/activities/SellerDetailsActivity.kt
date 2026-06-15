@@ -34,27 +34,14 @@ class SellerDetailsActivity : AppCompatActivity() {
             insets
         }
 
-        // ----------------------------
-        // TEXTVIEW
-        // ----------------------------
         val tvSellerName =
-            findViewById<TextView>(R.id.tv_seller_name)
+            findViewById<TextView>(R.id.stu_seller_name)
 
-        // ----------------------------
-        // GET SELLER NAME
-        // ----------------------------
         val sellerName =
             intent.getStringExtra("sellerName")
                 ?: "Unknown Seller"
 
-        // ----------------------------
-        // DISPLAY SELLER NAME
-        // ----------------------------
         tvSellerName.text = sellerName
-
-        // ----------------------------
-        // NAVIGATION
-        // ----------------------------
 
         findViewById<Button>(R.id.nav_home)
             .setOnClickListener {
@@ -66,31 +53,16 @@ class SellerDetailsActivity : AppCompatActivity() {
 
         findViewById<Button>(R.id.nav_listing)
             .setOnClickListener {
-
-                startActivity(
-                    Intent(this, ListingActivity::class.java)
-                )
+                startActivity(Intent(this, ListingActivity::class.java))
             }
 
         findViewById<Button>(R.id.nav_add)
-            .setOnClickListener {
-
-                startActivity(
-                    Intent(this, AddTextbookActivity::class.java)
-                )
+            .setOnClickListener { startActivity(Intent(this, AddTextbookActivity::class.java))
             }
 
         findViewById<Button>(R.id.nav_appointment)
-            .setOnClickListener {
-
-                startActivity(
-                    Intent(this, AppointmentActivity::class.java)
-                )
+            .setOnClickListener { startActivity(Intent(this, AppointmentActivity::class.java))
             }
-
-        // ----------------------------
-        // PROFILE BUTTON
-        // ----------------------------
 
         val profileBtn =
             findViewById<ImageButton>(R.id.imageButton)
@@ -102,15 +74,9 @@ class SellerDetailsActivity : AppCompatActivity() {
             )
         }
 
-        profileBtn.setOnClickListener {
-
-            DataStore.hasNotification = false
-
+        profileBtn.setOnClickListener { DataStore.hasNotification = false
             profileBtn.clearColorFilter()
-
-            startActivity(
-                Intent(this, ProfileActivity::class.java)
-            )
+            startActivity(Intent(this, ProfileActivity::class.java))
         }
     }
 }

@@ -29,24 +29,14 @@ class ListingActivity : AppCompatActivity() {
         setContentView(R.layout.activity_listing)
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-
-            v.setPadding(
-                systemBars.left,
-                systemBars.top,
-                systemBars.right,
-                systemBars.bottom
-            )
-
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
-        // RecyclerView
         recyclerView = findViewById(R.id.recycler_listing)
 
-        recyclerView.layoutManager =
-            LinearLayoutManager(this)
+        recyclerView.layoutManager = LinearLayoutManager(this)
 
         textbookList = PrefsManager.getBooks(this)
 
@@ -54,36 +44,37 @@ class ListingActivity : AppCompatActivity() {
 
         recyclerView.adapter = adapter
 
-        val searchView =
-            findViewById<SearchView>(R.id.searchView)
+        val searchView = findViewById<SearchView>(R.id.searchView)
 
-        searchView.setOnQueryTextListener(
-            object : SearchView.OnQueryTextListener {
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
 
-                override fun onQueryTextSubmit(query: String?): Boolean {
-                    return false
-                }
+            override fun onQueryTextSubmit(query: String?) = false
 
-                override fun onQueryTextChange(newText: String?): Boolean {
+            override fun onQueryTextChange(newText: String?): Boolean {
 
-                    val filteredList = textbookList.filter {
+                val query = newText ?: ""
 
-                        it.name.contains(newText ?: "", ignoreCase = true) ||
-                                it.module.contains(newText ?: "", ignoreCase = true) ||
-                                it.code.contains(newText ?: "", ignoreCase = true) ||
-                                it.isbn.contains(newText ?: "", ignoreCase = true) ||
-                                it.author.contains(newText ?: "", ignoreCase = true)
-                    }
 
-                    adapter = DetailedTextbookAdapter(filteredList)
-                    recyclerView.adapter = adapter
-
+                if (query.isEmpty()) {
+                    adapter.updateList(textbookList)
                     return true
                 }
-            }
-        )
 
-        // Navigation
+                val filteredList = textbookList.filter {
+                    it.name.contains(query, true) ||
+                            it.module.contains(query, true) ||
+                            it.code.contains(query, true) ||
+                            it.isbn.contains(query, true) ||
+                            it.author.contains(query, true)
+                }
+
+                adapter.updateList(filteredList)
+
+                return true
+            }
+        })
+
+
         findViewById<Button>(R.id.nav_home).setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
         }
@@ -96,7 +87,6 @@ class ListingActivity : AppCompatActivity() {
             startActivity(Intent(this, AppointmentActivity::class.java))
         }
 
-        // Profile button
         val profileBtn = findViewById<ImageButton>(R.id.imageButton)
 
         if (DataStore.hasNotification) {
@@ -104,17 +94,15 @@ class ListingActivity : AppCompatActivity() {
         }
 
         profileBtn.setOnClickListener {
-
             DataStore.hasNotification = false
-
             profileBtn.clearColorFilter()
-
             startActivity(Intent(this, ProfileActivity::class.java))
         }
     }
 
     override fun onResume() {
         super.onResume()
-        recyclerView.adapter?.notifyDataSetChanged()
+        val updatedList = PrefsManager.getBooks(this)
+        adapter.updateList(updatedList)
     }
 }

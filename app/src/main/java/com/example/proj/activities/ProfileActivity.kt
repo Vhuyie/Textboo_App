@@ -24,12 +24,12 @@ class ProfileActivity : AppCompatActivity() {
 
         val user = SessionManager.getCurrentUser(this)
 
-        val etName = findViewById<EditText>(R.id.et_name)
-        val etPassword = findViewById<EditText>(R.id.et_password)
+        val stuName = findViewById<EditText>(R.id.stu_name)
+        val stuPassword = findViewById<EditText>(R.id.stu_password)
         val tvStudentNo = findViewById<TextView>(R.id.student_no)
 
-        val profileName = findViewById<TextView>(R.id.tv_profile_name)
-        val profileEmail = findViewById<TextView>(R.id.tv_profile_email)
+        val profileName = findViewById<TextView>(R.id.profile_name)
+
 
         recycler = findViewById(R.id.recycler_appointments)
         recycler.layoutManager = LinearLayoutManager(this)
@@ -46,38 +46,30 @@ class ProfileActivity : AppCompatActivity() {
             profileBtn.clearColorFilter()
         }
 
-
         val sellerName = intent.getStringExtra("sellerName")
-        val sellerEmail = intent.getStringExtra("sellerEmail")
         val isSellerView = sellerName != null
 
         if (isSellerView) {
 
-            // SELLER PROFILE VIEW
-
+            // Seller profile details
             profileName.text = sellerName
-            profileEmail.text = sellerEmail
 
-            etName.visibility = View.GONE
-            etPassword.visibility = View.GONE
+            stuName.visibility = View.GONE
+            stuPassword.visibility = View.GONE
             tvStudentNo.visibility = View.GONE
 
         } else {
 
-
-            //  USER PROFILE
-
+            //user profile
             if (user != null) {
                 tvStudentNo.text = user.studentNo
-                etName.setText(user.name)
-                etPassword.setText(user.password)
+                stuName.setText(user.name)
+                stuPassword.setText(user.password)
             }
 
             loadAppointments()
         }
 
-
-        // NAVIGATION
         findViewById<Button>(R.id.nav_home).setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
         }
@@ -104,8 +96,6 @@ class ProfileActivity : AppCompatActivity() {
     }
 
 
-    // APPOINTMENTS
-
     private fun loadAppointments() {
 
         val user = SessionManager.getCurrentUser(this)
@@ -125,7 +115,7 @@ class ProfileActivity : AppCompatActivity() {
             }
 
             DataStore.hasNotification = true
-            loadAppointments() // refresh
+            loadAppointments() // refresh the screen
         }
 
         recycler.adapter = adapter

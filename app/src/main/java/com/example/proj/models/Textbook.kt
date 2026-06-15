@@ -9,9 +9,9 @@ data class Textbook(
     val isbn: String,
     val author: String,
     val price: String,
-
-    //val imageUri: String,
-
+    val description: String,
+    val edition: String,
+    val imageUri: String,
     val seller: User,
     var isSold: Boolean = false
 )

@@ -31,27 +31,15 @@ class MainActivity : AppCompatActivity() {
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
 
-            val systemBars =
-                insets.getInsets(WindowInsetsCompat.Type.systemBars())
-
-            v.setPadding(
-                systemBars.left,
-                systemBars.top,
-                systemBars.right,
-                systemBars.bottom
-            )
-
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
-        // ----------------------------
-        // RECYCLERVIEW
-        // ----------------------------
-        recyclerView =
-            findViewById(R.id.recycler_books)
 
-        recyclerView.layoutManager =
-            LinearLayoutManager(this)
+        recyclerView = findViewById(R.id.recycler_books)
+
+        recyclerView.layoutManager = LinearLayoutManager(this)
 
         // ----------------------------
         // ADAPTER
@@ -59,17 +47,13 @@ class MainActivity : AppCompatActivity() {
         textbookList = PrefsManager.getBooks(this)
 
         adapter = TextbookAdapter(textbookList) { book ->
-
-            val intent =
-                Intent(this, ListingActivity::class.java)
-
+            val intent = Intent(this, ListingActivity::class.java)
             startActivity(intent)
         }
 
         recyclerView.adapter = adapter
 
-        val searchView =
-            findViewById<SearchView>(R.id.searchView)
+        val searchView = findViewById<SearchView>(R.id.searchView)
 
         searchView.setOnQueryTextListener(
             object : SearchView.OnQueryTextListener {
@@ -79,37 +63,19 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 override fun onQueryTextChange(newText: String?): Boolean {
-
                     val filteredList = textbookList.filter {
 
-                        it.name.contains(
-                            newText ?: "",
-                            ignoreCase = true
-                        )
-
+                        it.name.contains(newText ?: "",
+                            ignoreCase = true)
                                 ||
-
-                                it.module.contains(
-                                    newText ?: "",
-                                    ignoreCase = true
-                                )
-
+                                it.module.contains(newText ?: "",
+                                    ignoreCase = true)
                                 ||
-
-                                it.code.contains(
-                                    newText ?: "",
-                                    ignoreCase = true
-                                )
+                                it.code.contains(newText ?: "",
+                                    ignoreCase = true)
                     }
-
                     adapter = TextbookAdapter(filteredList) { book ->
-
-                        val intent =
-                            Intent(
-                                this@MainActivity,
-                                ListingActivity::class.java
-                            )
-
+                        val intent = Intent(this@MainActivity, ListingActivity::class.java)
                         startActivity(intent)
                     }
 
@@ -120,44 +86,35 @@ class MainActivity : AppCompatActivity() {
             }
         )
 
-        // ----------------------------
-        // NAVIGATION BUTTONS
-        // ----------------------------
         findViewById<Button>(R.id.nav_home)
-            .setOnClickListener { startActivity(Intent(this, MainActivity::class.java))
+            .setOnClickListener {
+                startActivity(Intent(this, MainActivity::class.java))
             }
 
         findViewById<Button>(R.id.nav_listing)
-            .setOnClickListener { startActivity(Intent(this, ListingActivity::class.java))
+            .setOnClickListener {
+                startActivity(Intent(this, ListingActivity::class.java))
             }
 
         findViewById<Button>(R.id.nav_add)
-            .setOnClickListener { startActivity(Intent(this, AddTextbookActivity::class.java))
+            .setOnClickListener {
+                startActivity(Intent(this, AddTextbookActivity::class.java))
             }
 
         findViewById<Button>(R.id.nav_appointment)
-            .setOnClickListener { startActivity(Intent(this, AppointmentActivity::class.java))
+            .setOnClickListener {
+                startActivity(Intent(this, AppointmentActivity::class.java))
             }
 
-        // ----------------------------
-        // PROFILE BUTTON
-        // ----------------------------
-        val profileBtn =
-            findViewById<ImageButton>(R.id.imageButton)
+        val profileBtn = findViewById<ImageButton>(R.id.imageButton)
 
         if (DataStore.hasNotification) {
-
-            profileBtn.setColorFilter(
-                android.graphics.Color.RED
-            )
+            profileBtn.setColorFilter(android.graphics.Color.RED)
         }
 
         profileBtn.setOnClickListener {
-
             DataStore.hasNotification = false
-
             profileBtn.clearColorFilter()
-
             startActivity(
                 Intent(this, ProfileActivity::class.java)
             )
@@ -166,7 +123,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-
         recyclerView.adapter?.notifyDataSetChanged()
     }
 }

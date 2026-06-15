@@ -9,8 +9,8 @@ import com.example.proj.R
 import com.example.proj.models.Appointment
 
 class AppointmentAdapter(
-    private val list: List<Appointment>,
-    private val currentUser: String,
+    private val list: List<Appointment>, // to ensure the list of appointments show.
+    private val currentUser: String, // checks the current logged-in user's name.
     private val onAction: (Appointment, String) -> Unit
 ) : RecyclerView.Adapter<AppointmentAdapter.VH>() {
 
@@ -30,9 +30,10 @@ class AppointmentAdapter(
 
     override fun getItemCount() = list.size
 
+    // Bind data to the views for each appointment item
     override fun onBindViewHolder(holder: VH, position: Int) {
 
-        val appt = list[position]
+        val appt = list[position] // to get the current appointment
 
         holder.title.text = "${appt.bookedByName} → ${appt.bookedWithName}"
         holder.details.text = "${appt.date} ${appt.time}\n${appt.notes}"
@@ -40,6 +41,7 @@ class AppointmentAdapter(
 
         val isReceiver = appt.bookedWith == currentUser
 
+        // Show accept or reject buttons when the user is the receiver AND status is PENDING
         if (isReceiver && appt.status == "PENDING") {
             holder.accept.visibility = View.VISIBLE
             holder.reject.visibility = View.VISIBLE

@@ -15,8 +15,8 @@ import com.example.proj.data.SessionManager
 
 class LoginActivity : AppCompatActivity() {
 
-    private lateinit var etUsername: EditText
-    private lateinit var etPassword: EditText
+    private lateinit var StUsername: EditText
+    private lateinit var StPassword: EditText
     private lateinit var btnLogin: Button
     private lateinit var btnGoLogin: Button
 
@@ -29,16 +29,16 @@ class LoginActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        etUsername = findViewById(R.id.et_username)
-        etPassword = findViewById(R.id.et_password)
+        StUsername = findViewById(R.id.St_username)
+        StPassword = findViewById(R.id.St_password)
 
         btnLogin = findViewById(R.id.btn_login)
         btnGoLogin = findViewById(R.id.btn_go_login)
 
         btnLogin.setOnClickListener {
 
-            val studentNo = etUsername.text.toString()
-            val password = etPassword.text.toString()
+            val studentNo = StUsername.text.toString()
+            val password = StPassword.text.toString()
 
             val users = SessionManager.getUsers(this)
 
@@ -52,31 +52,22 @@ class LoginActivity : AppCompatActivity() {
 
                 SessionManager.saveCurrentUser(this, user)
 
-                Toast.makeText(
-                    this,
-                    "Login Successful",
+                Toast.makeText(this, "Login Successful",
                     Toast.LENGTH_SHORT
                 ).show()
 
-                startActivity(
-                    Intent(this, MainActivity::class.java)
-                )
+                startActivity(Intent(this, MainActivity::class.java))
                 finish()
 
             } else {
 
-                Toast.makeText(
-                    this,
-                    "Invalid student number or password",
-                    Toast.LENGTH_LONG
+                Toast.makeText(this, "Invalid student number or password", Toast.LENGTH_LONG
                 ).show()
             }
         }
 
         btnGoLogin.setOnClickListener {
-            startActivity(
-                Intent(this, RegisterActivity::class.java)
-            )
+            startActivity(Intent(this, RegisterActivity::class.java))
         }
     }
 }

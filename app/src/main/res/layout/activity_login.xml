@@ -8,10 +8,6 @@
     android:background="#D9B38C"
     tools:context=".activities.LoginActivity">
 
-    <!-- TOP IMAGE -->
-
-    <!-- LOGO -->
-
     <ImageView
         android:id="@+id/img_top"
         android:layout_width="460dp"
@@ -34,9 +30,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="12dp" />
 
-    <!-- REGISTER TEXT -->
+
     <TextView
-        android:id="@+id/tv_register"
+        android:id="@+id/stu_register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="LOGIN"
@@ -47,19 +43,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp" />
 
-    <!-- SUBTEXT -->
+
     <TextView
         android:id="@+id/tv_sub"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Already have an account"
         android:textSize="14sp"
-        app:layout_constraintTop_toBottomOf="@id/tv_register"
+        app:layout_constraintTop_toBottomOf="@id/stu_register"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="8dp" />
 
-    <!-- FORM -->
+
     <LinearLayout
         android:id="@+id/form"
         android:layout_width="0dp"
@@ -72,14 +68,14 @@
         android:layout_marginTop="16dp">
 
         <EditText
-            android:id="@+id/et_username"
+            android:id="@+id/St_username"
             style="@style/CustomEditText"
             android:layout_width="357dp"
             android:layout_height="66dp"
             android:hint="Username" />
 
         <EditText
-            android:id="@+id/et_password"
+            android:id="@+id/St_password"
             style="@style/CustomEditText"
             android:layout_width="348dp"
             android:layout_height="56dp"
@@ -95,13 +91,16 @@
             android:layout_marginTop="12dp" />
     </LinearLayout>
 
-    <!-- ALREADY HAVE ACCOUNT -->
+
     <LinearLayout
         android:id="@+id/login_row"
-        android:layout_width="243dp"
+        android:layout_width="0dp"
         android:layout_height="77dp"
         android:layout_marginTop="16dp"
+        android:layout_marginBottom="87dp"
+        android:gravity="center"
         android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/form">
@@ -111,7 +110,7 @@
             android:layout_width="215dp"
             android:layout_height="match_parent"
             android:layout_marginStart="8dp"
-            android:text="Login" />
+            android:text="Register" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

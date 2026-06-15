@@ -8,7 +8,7 @@
     android:background="#D9B38C"
     tools:context=".activities.RegisterActivity">
 
-    <!-- CIRCULAR IMAGE -->
+
     <ImageView
         android:id="@+id/img_top"
         android:layout_width="460dp"
@@ -21,7 +21,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- LOGO -->
+
     <ImageView
         android:id="@+id/img_logo"
         android:layout_width="111dp"
@@ -32,7 +32,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/img_top" />
 
-    <!-- REGISTER TEXT -->
+
     <TextView
         android:id="@+id/tv_register"
         android:layout_width="wrap_content"
@@ -45,7 +45,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="20dp"/>
 
-    <!-- SUBTEXT -->
+
     <TextView
         android:id="@+id/tv_sub"
         android:layout_width="wrap_content"
@@ -57,7 +57,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="8dp"/>
 
-    <!-- FORM -->
+
     <LinearLayout
         android:id="@+id/form"
         android:layout_width="455dp"
@@ -70,21 +70,21 @@
         app:layout_constraintTop_toBottomOf="@id/tv_sub">
 
         <EditText
-            android:id="@+id/et_student_no"
+            android:id="@+id/st_student_no"
             style="@style/CustomEditText"
             android:layout_width="409dp"
             android:layout_height="62dp"
             android:hint="Student Number" />
 
         <EditText
-            android:id="@+id/et_name"
+            android:id="@+id/st_name"
             style="@style/CustomEditText"
             android:layout_width="409dp"
             android:layout_height="62dp"
             android:hint="Student Name" />
 
         <EditText
-            android:id="@+id/et_password"
+            android:id="@+id/st_password"
             style="@style/CustomEditText"
             android:layout_width="409dp"
             android:layout_height="62dp"
@@ -92,7 +92,7 @@
             android:inputType="textPassword" />
 
         <EditText
-            android:id="@+id/et_confirm"
+            android:id="@+id/st_confirm"
             style="@style/CustomEditText"
             android:layout_width="409dp"
             android:layout_height="62dp"

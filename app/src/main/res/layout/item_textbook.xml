@@ -1,8 +1,8 @@
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
+    android:layout_marginTop="50dp"
     android:elevation="6dp">
 
     <LinearLayout
@@ -10,35 +10,36 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="12dp"
-        android:background="#D9B39C">
+        android:background="#DEC1A2">
 
-        <!--<ImageView
-            android:id="@+id/img_book"
+        <ImageView
+            android:id="@+id/book_image"
             android:layout_width="120dp"
             android:layout_height="120dp"
-            android:scaleType="centerCrop"/>-->
+            android:layout_marginBottom="8dp"
+            android:scaleType="centerCrop"/>
 
         <TextView
-            android:id="@+id/tv_name"
+            android:id="@+id/txt_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Textbook name: "
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/tv_module"
+            android:id="@+id/txt_module"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Module name: " />
 
         <TextView
-            android:id="@+id/tv_code"
+            android:id="@+id/txt_code"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Code: " />
 
         <TextView
-            android:id="@+id/tv_status"
+            android:id="@+id/txt_status"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
@@ -46,8 +47,9 @@
             android:id="@+id/btn_view"
             android:text="View More Details"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
+            android:layout_height="wrap_content"
+            android:backgroundTint="#4B5232"
+            android:textColor="@android:color/white"/>
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

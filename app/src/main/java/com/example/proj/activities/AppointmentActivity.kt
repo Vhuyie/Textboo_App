@@ -36,22 +36,22 @@ class AppointmentActivity : AppCompatActivity() {
 
         val profileBtn = findViewById<ImageButton>(R.id.imageButton)
 
-// 🔔 show notification indicator
+
         if (DataStore.hasNotification) {
             profileBtn.setColorFilter(android.graphics.Color.RED)
         }
 
-// click behavior
+
         profileBtn.setOnClickListener {
             DataStore.hasNotification = false
-            profileBtn.clearColorFilter() // remove red dot effect
+            profileBtn.clearColorFilter() // remove red dot effect after being clicked
             startActivity(Intent(this, ProfileActivity::class.java))
         }
 
         val autoUser = findViewById<AutoCompleteTextView>(R.id.auto_user)
-        val etDate = findViewById<EditText>(R.id.et_date)
-        val etTime = findViewById<EditText>(R.id.et_time)
-        val etNotes = findViewById<EditText>(R.id.et_notes)
+        val Date = findViewById<EditText>(R.id.date)
+        val Time = findViewById<EditText>(R.id.time)
+        val Notes = findViewById<EditText>(R.id.notes)
         val btnSubmit = findViewById<Button>(R.id.btn_submit)
 
         val users = SessionManager.getUsers(this)
@@ -61,26 +61,26 @@ class AppointmentActivity : AppCompatActivity() {
                 users.map { "${it.name} (${it.studentNo})" })
         )
 
-        etDate.setOnClickListener {
+        Date.setOnClickListener {
             val c = Calendar.getInstance()
             DatePickerDialog(this, { _, y, m, d ->
-                etDate.setText("$d/${m + 1}/$y")
+                Date.setText("$d/${m + 1}/$y")
             }, c.get(Calendar.YEAR), c.get(Calendar.MONTH), c.get(Calendar.DAY_OF_MONTH)).show()
         }
 
-        etTime.setOnClickListener {
+        Time.setOnClickListener {
             val c = Calendar.getInstance()
             TimePickerDialog(this, { _, h, m ->
-                etTime.setText(String.format("%02d:%02d", h, m))
+                Time.setText(String.format("%02d:%02d", h, m))
             }, c.get(Calendar.HOUR_OF_DAY), c.get(Calendar.MINUTE), true).show()
         }
 
         btnSubmit.setOnClickListener {
 
             val selected = autoUser.text.toString()
-            val date = etDate.text.toString()
-            val time = etTime.text.toString()
-            val notes = etNotes.text.toString()
+            val date = Date.text.toString()
+            val time = Time.text.toString()
+            val notes = Notes.text.toString()
 
             val studentNo = selected
                 .substringAfter("(", "")

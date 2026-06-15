@@ -44,7 +44,6 @@
 
     </LinearLayout>
 
-    <!-- NAV BAR -->
     <LinearLayout
         android:id="@+id/nav_bar"
         android:layout_width="0dp"
@@ -107,7 +106,7 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <TextView
-            android:id="@+id/tv_seller_name"
+            android:id="@+id/stu_seller_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Seller Name"
@@ -117,8 +116,8 @@
 
     <ImageView
         android:id="@+id/img_logo"
-        android:layout_width="417dp"
-        android:layout_height="23dp"
+        android:layout_width="484dp"
+        android:layout_height="25dp"
         android:layout_marginTop="66dp"
         android:scaleType="centerCrop"
         android:src="@drawable/screenshot_2026_05_06_181122"
